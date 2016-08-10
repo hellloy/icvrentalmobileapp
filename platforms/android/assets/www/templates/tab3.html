@@ -1,0 +1,12 @@
+<ion-view cache-view="false" title="Open Orders">
+    
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <ion-list class="item-text-wrap">
+            <ion-item class="item-icon-left" ng-repeat="item in data | orderBy:'-id'" href="#/edit/{{item.id}}">
+                <span class="item-note"> #{{item.id}}</span>
+                {{item.name}}
+                <i class="icon ion-ios-list-outline calm"></i>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

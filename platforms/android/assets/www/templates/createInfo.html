@@ -1,0 +1,18 @@
+<ion-view title="Client Info">
+
+<ion-content overflow-scroll="true" padding="true" class="has-header">
+    <div class="list">
+
+        <label class="item item-input item-select">
+            <div class="input-label">
+                Client: 
+            </div>
+            <select>
+                <option value="" disabled selected>Select client...</option>
+                <option ng-repeat="item in ClientList" value="item.id">{{item.FullName}}</option>
+            </select>
+        </label>
+
+    </div>
+</ion-content>
+</ion-view>

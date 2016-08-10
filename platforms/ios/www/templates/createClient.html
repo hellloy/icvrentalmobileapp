@@ -1,0 +1,118 @@
+<ion-view title="Client Info">
+    <ion-nav-buttons>
+        <a class="button button-icon icon ion-ios-list-outline button-clear" href="#/main"> Main</a>
+    </ion-nav-buttons>
+<ion-content overflow-scroll="true" padding="true" class="has-header">
+    <form name="forms.clientForm" novalidate>
+        <div class="card" ng-show="createClient == false">
+            <div class="item item-divider">
+                Select client
+            </div>
+            <div class="item item-text-wrap">
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        Client:
+                    </div>
+                    <select ng-options="item.FullName for item in ClientList " ng-model="item" name="clientId" ng-change="writeSelectClient(item)"  ng-class="{ 'has-errors' : forms.clientForm.clientId.$error.required, 'no-errors' : forms.clientForm.clientId.$valid}" required>
+                        <option value="" disabled selected>Please Choose...</option>
+                    </select>
+                </label>
+                <div class="error-container" ng-show="forms.clientForm.clientId.$error" ng-hide="forms.clientForm.clientId.$valid" ng-messages="forms.clientForm.clientId.$error">
+                    <div class="error" ng-message="required">
+                        <i class="ion-information-circled"></i>
+                        This field is required!
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </form>
+    
+        <div class="card" ng-show="createClient == true">
+            <div class="item item-divider">
+                Add new user
+            </div>
+            <form name="forms.userForm" novalidate>
+                <div class="item item-text-wrap">
+                    <label class="item item-input">
+                        <input type="email" ng-model="user.email" name="email" placeholder="Email (Login)" ng-class="{ 'has-errors' : forms.userForm.email.$error.required, 'no-errors' : forms.userForm.email.$valid}" required>
+                    </label>
+                    <div class="error-container" ng-show="forms.userForm.email.$error" ng-hide="forms.userForm.email.$valid" ng-messages="forms.userForm.email.$error">
+                        <div class="error" ng-message="required">
+                            <i class="ion-information-circled"></i>
+                            This field is required!
+                        </div>
+                    </div>
+                    <label class="item item-input">
+                        <input type="password" ng-model="user.password" name="pass" placeholder="Password" ng-class="{ 'has-errors' : forms.userForm.pass.$error.required, 'no-errors' : forms.userForm.pass.$valid}" required>
+                    </label>
+                    <div class="error-container" ng-show="forms.userForm.pass.$error" ng-hide="forms.userForm.pass.$valid" ng-messages="forms.userForm.pass.$error">
+                        <div class="error" ng-message="required">
+                            <i class="ion-information-circled"></i>
+                            This field is required!
+                        </div>
+                    </div>
+                    <label class="item item-input">
+                        <input type="password" ng-model="user.confirmpassword" name="confirmPass" placeholder="Confirm password" ng-class="{ 'has-errors' : forms.userForm.confirmPass.$error.required, 'no-errors' : forms.userForm.confirmPass.$valid}" required>
+                    </label>
+                    <div class="error-container" ng-show="forms.userForm.confirmPass.$error" ng-hide="forms.userForm.confirmPass.$valid" ng-messages="forms.userForm.confirmPass.$error">
+                        <div class="error" ng-message="required">
+                            <i class="ion-information-circled"></i>
+                            This field is required!
+                        </div>
+                    </div>
+                    <label class="item item-input">
+                        <input type="text" ng-model="user.firstname" name="firstName" placeholder="First name" ng-class="{ 'has-errors' : forms.userForm.email.$error.firstName, 'no-errors' : forms.userForm.firstName.$valid}" required>
+                    </label>
+                    <div class="error-container" ng-show="forms.userForm.firstName.$error" ng-hide="forms.userForm.firstName.$valid" ng-messages="forms.userForm.firstName.$error">
+                        <div class="error" ng-message="required">
+                            <i class="ion-information-circled"></i>
+                            This field is required!
+                        </div>
+                    </div>
+                    <label class="item item-input">
+                        <input type="text" ng-model="user.lastname" name="lastName" placeholder="Last name" ng-class="{ 'has-errors' : forms.userForm.lastName.$error.required, 'no-errors' : forms.userForm.lastName.$valid}" required>
+                    </label>
+                    <div class="error-container" ng-show="forms.userForm.lastName.$error" ng-hide="forms.userForm.lastName.$valid" ng-messages="forms.userForm.lastName.$error">
+                        <div class="error" ng-message="required">
+                            <i class="ion-information-circled"></i>
+                            This field is required!
+                        </div>
+                    </div>
+                    <label class="item item-input">
+                        <input type="tel" ng-model="user.phone" name="phone" placeholder="Phone" ng-class="{ 'has-errors' : forms.userForm.phone.$error.required, 'no-errors' : forms.userForm.phone.$valid}" required>
+                    </label>
+                    <div class="error-container" ng-show="forms.userForm.phone.$error" ng-hide="forms.userForm.phone.$valid" ng-messages="forms.userForm.phone.$error">
+                        <div class="error" ng-message="required">
+                            <i class="ion-information-circled"></i>
+                            This field is required!
+                        </div>
+                    </div>
+                    <label class="item item-input">
+                        <input type="text" ng-model="user.company" name="company" placeholder="Company" ng-class="{ 'has-errors' : forms.userForm.company.$error.required, 'no-errors' : forms.userForm.company.$valid}" required>
+                    </label>
+                    <div class="error-container" ng-show="forms.userForm.company.$error" ng-hide="forms.userForm.company.$valid" ng-messages="forms.userForm.company.$error">
+                        <div class="error" ng-message="required">
+                            <i class="ion-information-circled"></i>
+                            This field is required!
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+</ion-content>
+    <ion-footer-bar class="bar-calm">
+        
+        <div class="button-bar">
+            <button class="button button-icon icon ion-ios-plus-outline button-clear" ng-click="createClient=true;" ng-show="createClient == false">
+              or New Client
+            </button>
+            <button class="button button-icon icon ion-ios-undo-outline button-clear" ng-click="createClient=false;" ng-show="createClient == true">
+               Select Client
+            </button>
+            <a href="#/create/date" class="button button-icon icon ion-ios-arrow-right button-clear" ng-disabled="(forms.userForm.$invalid) && (forms.clientForm.$invalid)">
+                Next
+            </a>
+</div>
+    </ion-footer-bar>
+</ion-view>

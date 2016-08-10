@@ -1,0 +1,11 @@
+{
+     "android": {
+      "release": {
+        "keystore": "e:\\my-release-key.keystore",
+        "storePassword": "02101978q",
+        "alias": "hellloy",
+        "password": "02101978q",
+        "keystoreType": ""
+      }
+     }
+ }

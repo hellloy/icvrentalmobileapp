@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--ЭТОТ ФАЙЛ СОЗДАН В ПРОЦЕССЕ СБОРКИ VISUAL STUDIO ДЛЯ ТЕЛЕМЕТРИИ-->
+<VSBuildInfo xmlns="http://schemas.microsoft.com/developer/appx/2012/build">
+  <Metadata>
+    <Item Name="VisualStudio" Version="14.0" />
+    <Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Professional 2015" />
+    <Item Name="OperatingSystem" Version="10.0.10240.16384 (th1.150709-1700)" />
+    <Item Name="ProjectGUID" Value="ad3ce32b-152c-404b-bd65-f25b5d5b6aaf" />
+  </Metadata>
+</VSBuildInfo>
